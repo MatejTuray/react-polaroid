@@ -3,20 +3,34 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.css";
 
-export default class ExampleComponent extends Component {
+class Polaroid extends Component {
   static propTypes = {
-    text: PropTypes.string,
-    imgSrc: PropTypes.string
+    frontText: PropTypes.string,
+    imgSrc: PropTypes.string,
+    style: PropTypes.any,
+    height: PropTypes.number,
+    width: PropTypes.number
   };
 
   render() {
-    const { text, imgSrc } = this.props;
+    const { frontText, imgSrc, style, width, height } = this.props;
 
     return (
-      <div>
-        <img src={imgSrc || "https://placekitten.com/200/287"} />
-        <p>Bottom text: {text}</p>
+      <div
+        className={styles.Polaroid_container}
+        style={{ ...style, width, height }}
+      >
+        <img src={imgSrc} className={styles.Polaroid_image} />
+        <p>{frontText}</p>
       </div>
     );
   }
 }
+Polaroid.defaultProps = {
+  height: 400,
+  width: 220,
+  imgSrc: "https://placekitten.com/200/287",
+  frontText: "Polaroid Kitteh"
+};
+
+export default Polaroid;
