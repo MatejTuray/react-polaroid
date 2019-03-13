@@ -4,20 +4,42 @@ import placecat from "./placecat.jpg";
 import styles from "./styles.css";
 
 class Polaroid extends Component {
-  /*
-  TODO: docgen
-  proptypes
-
-  */
+  /**
+   * General component description.
+   */
   static propTypes = {
     frontText: PropTypes.string,
+    /**
+     * Prop description
+     */
     imgSrc: PropTypes.string,
+    /**
+     * Prop description
+     */
     style: PropTypes.any,
+    /**
+     * Prop description
+     */
     height: PropTypes.number,
+    /**
+     * Prop description
+     */
     width: PropTypes.number,
+    /**
+     * Prop description
+     */
     rotation: PropTypes.number,
+    /**
+     * Prop description
+     */
     flip: PropTypes.bool,
+    /**
+     * Prop description
+     */
     backText: PropTypes.string
+    /**
+     * Prop description
+     */
   };
   constructor(props) {
     super(props);
