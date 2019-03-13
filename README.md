@@ -13,18 +13,39 @@ npm install --save react-polaroid
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'react-polaroid'
+import Polaroid from "react-polaroid";
 
-class Example extends Component {
-  render () {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      flip: false
+    };
+  }
+  flip = () => {
+    this.setState({
+      flip: !this.state.flip
+    });
+  };
+
+  render() {
     return (
-      <MyComponent />
-    )
+      <div onClick={() => this.flip()}>
+        <Polaroid
+          frontText="Polaroid kitty - front"
+          rotation={0}
+          flip={this.state.flip}
+        />
+      </div>
+    );
   }
 }
 ```
+
+##PropTypes
 
 ## License
 

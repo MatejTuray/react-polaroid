@@ -4,24 +4,90 @@ import placecat from "./placecat.jpg";
 import styles from "./styles.css";
 
 class Polaroid extends Component {
+  /*
+  TODO: docgen
+  proptypes
+
+  */
   static propTypes = {
     frontText: PropTypes.string,
     imgSrc: PropTypes.string,
     style: PropTypes.any,
     height: PropTypes.number,
     width: PropTypes.number,
-    rotation: PropTypes.number
+    rotation: PropTypes.number,
+    flip: PropTypes.bool,
+    backText: PropTypes.string
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      flip: this.props.flip
+    };
+  }
+  componentWillReceiveProps(newProps) {
+    const state = this.state;
+    const props = this.props;
+
+    if (!props.disabled) {
+      if (
+        (newProps.flip === true && state.flip === false) ||
+        (newProps.flip === false && state.flip === true)
+      ) {
+        return this.setState({
+          flip: !state.flip
+        });
+      }
+    }
+
+    return false;
+  }
 
   render() {
-    const { frontText, imgSrc, style, width, height, rotation } = this.props;
+    const {
+      frontText,
+      imgSrc,
+      style,
+      width,
+      height,
+      rotation,
+      backText
+    } = this.props;
     return (
       <div
         className={styles.Polaroid_container}
         style={{ ...style, width, height, transform: `rotate(${rotation}deg)` }}
       >
-        <img src={imgSrc} className={styles.Polaroid_image} />
-        <p>{frontText}</p>
+        <div
+          className={styles.Polaroid_card}
+          style={{
+            ...style,
+            transform: this.state.flip ? `rotateY(180deg)` : `rotateY(0deg)`
+          }}
+        >
+          <div
+            className={styles.Polaroid_container_back}
+            style={{
+              ...style
+            }}
+          >
+            <p
+              className={styles.Polaroid_back_delay}
+              style={{ transform: `rotateY(180deg)` }}
+            >
+              {backText}
+            </p>
+          </div>
+          <div
+            className={styles.Polaroid_container_front}
+            style={{
+              ...style
+            }}
+          >
+            <img src={imgSrc} className={styles.Polaroid_image} />
+            <p>{frontText}</p>
+          </div>
+        </div>
       </div>
     );
   }
@@ -31,7 +97,9 @@ Polaroid.defaultProps = {
   width: 220,
   imgSrc: placecat,
   frontText: "Polaroid Kitteh",
-  rotation: 0
+  rotation: 0,
+  backText: "Polaroid Kitty - back",
+  flip: false
 };
 
 export default Polaroid;
