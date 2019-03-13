@@ -6,10 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Polaroid
-          frontText="Polaroid kitty - front"
-          imgSrc="https://placekitten.com/199/286"
-        />
+        <Polaroid frontText="Polaroid kitty - front" rotation={-10} />
       </div>
     );
   }

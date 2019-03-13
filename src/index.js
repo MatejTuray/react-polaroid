@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import placecat from "./placecat.jpg";
 import styles from "./styles.css";
 
 class Polaroid extends Component {
@@ -9,16 +9,16 @@ class Polaroid extends Component {
     imgSrc: PropTypes.string,
     style: PropTypes.any,
     height: PropTypes.number,
-    width: PropTypes.number
+    width: PropTypes.number,
+    rotation: PropTypes.number
   };
 
   render() {
-    const { frontText, imgSrc, style, width, height } = this.props;
-
+    const { frontText, imgSrc, style, width, height, rotation } = this.props;
     return (
       <div
         className={styles.Polaroid_container}
-        style={{ ...style, width, height }}
+        style={{ ...style, width, height, transform: `rotate(${rotation}deg)` }}
       >
         <img src={imgSrc} className={styles.Polaroid_image} />
         <p>{frontText}</p>
@@ -29,8 +29,9 @@ class Polaroid extends Component {
 Polaroid.defaultProps = {
   height: 400,
   width: 220,
-  imgSrc: "https://placekitten.com/200/287",
-  frontText: "Polaroid Kitteh"
+  imgSrc: placecat,
+  frontText: "Polaroid Kitteh",
+  rotation: 0
 };
 
 export default Polaroid;
