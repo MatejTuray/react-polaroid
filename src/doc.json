@@ -1,0 +1,134 @@
+{
+  "description": "",
+  "displayName": "Polaroid",
+  "methods": [],
+  "props": {
+    "frontText": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "defaultValue": {
+        "value": "\"Polaroid kitty - front\"",
+        "computed": false
+      }
+    },
+    "imgSrc": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "placecat",
+        "computed": true
+      }
+    },
+    "style": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": "Prop description"
+    },
+    "height": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "400",
+        "computed": false
+      }
+    },
+    "width": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "220",
+        "computed": false
+      }
+    },
+    "rotation": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "0",
+        "computed": false
+      }
+    },
+    "flip": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      }
+    },
+    "backText": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "\"Polaroid kitty - back\"",
+        "computed": false
+      }
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      }
+    },
+    "type": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "\"side\"",
+            "computed": false
+          },
+          {
+            "value": "\"default\"",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "\"default\"",
+        "computed": false
+      }
+    },
+    "cardColor": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Prop description",
+      "defaultValue": {
+        "value": "\"white\"",
+        "computed": false
+      }
+    }
+  }
+}

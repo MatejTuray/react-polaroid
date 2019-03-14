@@ -1,7 +1,95 @@
-import ExampleComponent from './'
+import Polaroid from "./index.js";
+import styles from "./styles.css";
+import React from "react";
+import renderer from "react-test-renderer";
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+const defaultProps = {
+  height: 400,
+  width: 220,
+  imgSrc: "placecat.jpg",
+  frontText: "Polaroid kitty - front",
+  rotation: 0,
+  backText: "Polaroid kitty - back",
+  flip: false,
+  disabled: false,
+  type: "default",
+  cardColor: "white"
+};
+
+describe("Correctly rendering Polaroid component - snapshot", () => {
+  it("should render Polaroid correctly", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"blue"}
+        />
+      )
+      .toJSON();
+    expect(PolaroidTest).toMatchSnapshot();
+  });
+});
+
+describe("Testing props", () => {
+  it("default props should be correct", () => {
+    expect(JSON.stringify(Polaroid.defaultProps)).toBe(
+      JSON.stringify(defaultProps)
+    );
+  });
+  it("changing backText should be correct", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"blue"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.backText).toBe("Back text test");
+  });
+  it("changing frontText should be correct", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"blue"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.frontText).toBe("Front text test");
+  });
+  it("changing flipping types should be correct", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"blue"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.type).toBe("side");
+  });
+});

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Correctly rendering Polaroid component - snapshot should render Polaroid correctly 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "height": 500,
+      "maxHeight": 500,
+      "maxWidth": 250,
+      "transform": "rotate(0deg)",
+      "width": 250,
+    }
+  }
+>
+  <div
+    className={undefined}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "transform": "rotateY(0deg)",
+        "transformOrigin": "center right",
+      }
+    }
+  >
+    <div
+      className={undefined}
+      style={Object {}}
+    >
+      <p
+        className={undefined}
+        style={
+          Object {
+            "transform": "rotateY(180deg)",
+          }
+        }
+      >
+        Back text test
+      </p>
+    </div>
+    <div
+      className={undefined}
+      style={Object {}}
+    >
+      <img
+        className={undefined}
+        src="placecat.jpg"
+      />
+      <p
+        className={undefined}
+      >
+        Front text test
+      </p>
+    </div>
+  </div>
+</div>
+`;

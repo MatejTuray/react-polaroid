@@ -5,7 +5,7 @@ import styles from "./styles.css";
 
 class Polaroid extends Component {
   /**
-   * General component description.
+   Polaroid react component flippable
    */
   static propTypes = {
     frontText: PropTypes.string,
@@ -36,7 +36,20 @@ class Polaroid extends Component {
     /**
      * Prop description
      */
-    backText: PropTypes.string
+    backText: PropTypes.string,
+    /**
+     * Prop description
+     */
+    disabled: PropTypes.bool,
+    /**
+     * Prop description
+     */
+    type: PropTypes.oneOf(["side", "default"]),
+    /**
+     * Prop description
+     */
+
+    cardColor: PropTypes.string
     /**
      * Prop description
      */
@@ -73,18 +86,36 @@ class Polaroid extends Component {
       width,
       height,
       rotation,
-      backText
+      backText,
+      cardColor
     } = this.props;
+    let fliptype =
+      this.props.type === "default" && !this.props.disabled
+        ? `rotateY(180deg)`
+        : `translateX(-100%) rotateY(-180deg)`;
+    let transformOrigin =
+      !this.props.disabled && this.props.type === "side"
+        ? "center right"
+        : `center`;
     return (
       <div
         className={styles.Polaroid_container}
-        style={{ ...style, width, height, transform: `rotate(${rotation}deg)` }}
+        style={{
+          ...style,
+          width,
+          height,
+          transform: `rotate(${rotation}deg)`,
+          maxHeight: height,
+          maxWidth: width
+        }}
       >
         <div
           className={styles.Polaroid_card}
           style={{
             ...style,
-            transform: this.state.flip ? `rotateY(180deg)` : `rotateY(0deg)`
+            transform: this.state.flip ? fliptype : `rotateY(0deg)`,
+            transformOrigin: transformOrigin,
+            backgroundColor: cardColor
           }}
         >
           <div
@@ -107,7 +138,7 @@ class Polaroid extends Component {
             }}
           >
             <img src={imgSrc} className={styles.Polaroid_image} />
-            <p>{frontText}</p>
+            <p className={styles.Polaroid_text}>{frontText}</p>
           </div>
         </div>
       </div>
@@ -118,10 +149,13 @@ Polaroid.defaultProps = {
   height: 400,
   width: 220,
   imgSrc: placecat,
-  frontText: "Polaroid Kitteh",
+  frontText: "Polaroid kitty - front",
   rotation: 0,
-  backText: "Polaroid Kitty - back",
-  flip: false
+  backText: "Polaroid kitty - back",
+  flip: false,
+  disabled: false,
+  type: "default",
+  cardColor: "white"
 };
 
 export default Polaroid;
