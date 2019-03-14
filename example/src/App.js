@@ -7,23 +7,55 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      flip: false
+      flip1: false,
+      flip2: false
     };
   }
   flip = () => {
     this.setState({
-      flip: !this.state.flip
+      flip1: !this.state.flip1
     });
   };
-
+  sideFlip = () => {
+    this.setState({
+      flip2: !this.state.flip2
+    });
+  };
   render() {
     return (
-      <div onClick={() => this.flip()}>
-        <Polaroid
-          frontText="Polaroid kitty - front"
-          rotation={0}
-          flip={this.state.flip}
-        />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw"
+        }}
+      >
+        <div>
+          <h1>Polaroid Kittens!</h1>
+          <h3>
+            React flippable polaroid component
+            <small> (kittens not included)</small>
+          </h3>
+          <h4>Click on them to see flipping in action</h4>
+        </div>
+        <div onClick={() => this.flip()}>
+          <Polaroid
+            frontText="Polaroid kitty - front with default flip"
+            rotation={0}
+            flip={this.state.flip1}
+          />
+        </div>
+        <div onClick={() => this.sideFlip()}>
+          <Polaroid
+            frontText="Polaroid kitty - front with side flip"
+            rotation={0}
+            flip={this.state.flip2}
+            imgSrc={"http://placekitten.com/200/300"}
+            type={"side"}
+          />
+        </div>
       </div>
     );
   }

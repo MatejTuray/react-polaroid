@@ -45,8 +45,6 @@ export default class App extends Component {
 }
 ```
 
-## Component
-
 # `Polaroid` (component)
 
 ## Props
@@ -56,7 +54,21 @@ export default class App extends Component {
 Prop description
 
 type: `string`
-defaultValue: `"Polaroid Kitty - back"`
+defaultValue: `"Polaroid kitty - back"`
+
+### `cardColor`
+
+Prop description
+
+type: `string`
+defaultValue: `"white"`
+
+### `disabled`
+
+Prop description
+
+type: `bool`
+defaultValue: `false`
 
 ### `flip`
 
@@ -68,7 +80,7 @@ defaultValue: `false`
 ### `frontText`
 
 type: `string`
-defaultValue: `"Polaroid Kitteh"`
+defaultValue: `"Polaroid kitty - front"`
 
 ### `height`
 
@@ -96,6 +108,13 @@ defaultValue: `0`
 Prop description
 
 type: `any`
+
+### `type`
+
+Prop description
+
+type: `enum("side"|"default")`
+defaultValue: `"default"`
 
 ### `width`
 
