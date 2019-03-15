@@ -92,4 +92,55 @@ describe("Testing props", () => {
 
     expect(PolaroidTest.props.type).toBe("side");
   });
+  it("changing card color should work", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"#ff5f89"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.cardColor).toBe("#ff5f89");
+  });
+  it("changing height should work", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"#ff5f89"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.height).toBe(500);
+  });
+  it("changing width should work", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          cardColor={"#ff5f89"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.width).toBe(250);
+  });
 });
