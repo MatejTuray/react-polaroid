@@ -2,7 +2,7 @@ import Polaroid from "./index.js";
 import styles from "./styles.css";
 import React from "react";
 import renderer from "react-test-renderer";
-
+import { mount, shallow, render } from "enzyme";
 const defaultProps = {
   height: 400,
   width: 220,
@@ -142,5 +142,60 @@ describe("Testing props", () => {
       .toTree();
 
     expect(PolaroidTest.props.width).toBe(250);
+  });
+  it("flip status should be a boolean", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          flip={true}
+          cardColor={"#ff5f89"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.flip).toBe(true);
+  });
+  it("disabled status should be a boolean", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          flip={true}
+          cardColor={"#ff5f89"}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.disabled).toBe(false);
+  });
+  it("rotation should be a number", () => {
+    const PolaroidTest = renderer
+      .create(
+        <Polaroid
+          frontText="Front text test"
+          backText="Back text test"
+          disabled={false}
+          height={500}
+          width={250}
+          type={"side"}
+          flip={true}
+          cardColor={"#ff5f89"}
+          rotation={20}
+        />
+      )
+      .toTree();
+
+    expect(PolaroidTest.props.rotation).toBe(20);
   });
 });
