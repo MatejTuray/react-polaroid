@@ -1,14 +1,14 @@
 `Polaroid` (component)
 ======================
 
-
+React component - Flippable Polaroid photo
 
 Props
 -----
 
 ### `backText`
 
-Prop description
+Text on the back of the polaroid picture / card
 
 type: `string`
 defaultValue: `"Polaroid kitty - back"`
@@ -16,7 +16,7 @@ defaultValue: `"Polaroid kitty - back"`
 
 ### `cardColor`
 
-Prop description
+Optional background color prop
 
 type: `string`
 defaultValue: `"white"`
@@ -24,7 +24,7 @@ defaultValue: `"white"`
 
 ### `disabled`
 
-Prop description
+Disable flipping
 
 type: `bool`
 defaultValue: `false`
@@ -32,7 +32,7 @@ defaultValue: `false`
 
 ### `flip`
 
-Prop description
+Control flipping between front and back
 
 type: `bool`
 defaultValue: `false`
@@ -40,13 +40,15 @@ defaultValue: `false`
 
 ### `frontText`
 
+Text on the front of the polaroid picture / card
+
 type: `string`
 defaultValue: `"Polaroid kitty - front"`
 
 
 ### `height`
 
-Prop description
+Height
 
 type: `number`
 defaultValue: `400`
@@ -54,7 +56,7 @@ defaultValue: `400`
 
 ### `imgSrc`
 
-Prop description
+Image uri
 
 type: `string`
 defaultValue: `placecat`
@@ -62,22 +64,15 @@ defaultValue: `placecat`
 
 ### `rotation`
 
-Prop description
+Rotation of the component
 
 type: `number`
 defaultValue: `0`
 
 
-### `style`
-
-Prop description
-
-type: `any`
-
-
 ### `type`
 
-Prop description
+Flip animation type
 
 type: `enum("side"|"default")`
 defaultValue: `"default"`
@@ -85,7 +80,7 @@ defaultValue: `"default"`
 
 ### `width`
 
-Prop description
+Width
 
 type: `number`
 defaultValue: `220`

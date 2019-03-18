@@ -3,6 +3,7 @@
 exports[`Correctly rendering Polaroid component - snapshot should render Polaroid correctly 1`] = `
 <div
   className={undefined}
+  onClick={undefined}
   style={
     Object {
       "height": 500,

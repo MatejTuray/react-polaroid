@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "React component - Flippable Polaroid photo",
   "displayName": "Polaroid",
   "methods": [],
   "props": {
@@ -8,7 +8,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "",
+      "description": "Text on the front of the polaroid picture / card",
       "defaultValue": {
         "value": "\"Polaroid kitty - front\"",
         "computed": false
@@ -19,25 +19,18 @@
         "name": "string"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Image uri",
       "defaultValue": {
         "value": "placecat",
         "computed": true
       }
-    },
-    "style": {
-      "type": {
-        "name": "any"
-      },
-      "required": false,
-      "description": "Prop description"
     },
     "height": {
       "type": {
         "name": "number"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Height",
       "defaultValue": {
         "value": "400",
         "computed": false
@@ -48,7 +41,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Width",
       "defaultValue": {
         "value": "220",
         "computed": false
@@ -59,7 +52,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Rotation of the component",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -70,7 +63,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Control flipping between front and back",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -81,7 +74,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Text on the back of the polaroid picture / card",
       "defaultValue": {
         "value": "\"Polaroid kitty - back\"",
         "computed": false
@@ -92,7 +85,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Disable flipping",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -113,7 +106,7 @@
         ]
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Flip animation type",
       "defaultValue": {
         "value": "\"default\"",
         "computed": false
@@ -124,7 +117,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "Prop description",
+      "description": "Optional background color prop",
       "defaultValue": {
         "value": "\"white\"",
         "computed": false

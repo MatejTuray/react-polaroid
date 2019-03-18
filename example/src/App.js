@@ -40,15 +40,17 @@ export default class App extends Component {
           </h3>
           <h4>Click on them to see flipping in action</h4>
         </div>
-        <div onClick={() => this.flip()}>
+        <div>
           <Polaroid
             frontText="Polaroid kitty - front with default flip"
             rotation={0}
             flip={this.state.flip1}
+            onClick={() => this.flip()}
           />
         </div>
-        <div onClick={() => this.sideFlip()}>
+        <div>
           <Polaroid
+            onClick={() => this.sideFlip()}
             frontText="Polaroid kitty - front with side flip"
             rotation={0}
             flip={this.state.flip2}

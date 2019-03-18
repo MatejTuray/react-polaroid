@@ -1,4 +1,4 @@
-const data = require("./doc.json");
+const data = require("./docs.json");
 const generateMarkdown = require("../utils/generateMarkdown");
 const fs = require("fs");
 const markdown = generateMarkdown("Polaroid", data);

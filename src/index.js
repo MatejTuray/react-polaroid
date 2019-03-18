@@ -5,54 +5,58 @@ import styles from "./styles.css";
 
 class Polaroid extends Component {
   /**
-   Polaroid react component flippable
+   *React component - Flippable Polaroid photo
    */
   static propTypes = {
-    frontText: PropTypes.string,
     /**
-     * Prop description
+     * Text on the front of the polaroid picture / card
+     */
+    frontText: PropTypes.string,
+
+    /**
+     *Image uri
      */
     imgSrc: PropTypes.string,
+
     /**
-     * Prop description
-     */
-    style: PropTypes.any,
-    /**
-     * Prop description
+     * Height
      */
     height: PropTypes.number,
+
     /**
-     * Prop description
+     * Width
      */
     width: PropTypes.number,
+
     /**
-     * Prop description
+     * Rotation of the component
      */
     rotation: PropTypes.number,
+
     /**
-     * Prop description
+     * Control flipping between front and back
      */
     flip: PropTypes.bool,
+
     /**
-     * Prop description
+     *Text on the back of the polaroid picture / card
      */
     backText: PropTypes.string,
+
     /**
-     * Prop description
+     *Disable flipping
      */
     disabled: PropTypes.bool,
+
     /**
-     * Prop description
+     *Flip animation type
      */
     type: PropTypes.oneOf(["side", "default"]),
-    /**
-     * Prop description
-     */
 
-    cardColor: PropTypes.string
     /**
-     * Prop description
+     *Optional background color prop
      */
+    cardColor: PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -100,6 +104,7 @@ class Polaroid extends Component {
     return (
       <div
         className={styles.Polaroid_container}
+        onClick={this.props.onClick}
         style={{
           ...style,
           width,

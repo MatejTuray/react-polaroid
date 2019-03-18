@@ -2,6 +2,7 @@ import Polaroid from "./index.js";
 import styles from "./styles.css";
 import React from "react";
 import renderer from "react-test-renderer";
+import snapshot from "./__snapshots__/test.js.snap";
 import { mount, shallow, render } from "enzyme";
 const defaultProps = {
   height: 400,
@@ -197,5 +198,30 @@ describe("Testing props", () => {
       .toTree();
 
     expect(PolaroidTest.props.rotation).toBe(20);
+  });
+});
+
+describe("Testing behaviour", () => {
+  it("should trigger click events", () => {
+    let flip = false;
+    const switchFlip = flip => {
+      return !flip;
+    };
+    const mockCallBack = jest.fn();
+    const component = mount(<Polaroid flip={flip} onClick={mockCallBack} />);
+    component
+      .find("div")
+      .at(0)
+      .simulate("click");
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+  it("should flip a polaroid card", () => {
+    let flip = false;
+    const component = mount(<Polaroid flip={flip} onClick={x => !x} />);
+    expect(component.prop("flip")).toBe(false);
+    flip = component.prop("onClick")(flip);
+    component.setProps({ flip: flip });
+    component.update();
+    expect(component.prop("flip")).toBe(true);
   });
 });
