@@ -225,3 +225,31 @@ describe("Testing behaviour", () => {
     expect(component.prop("flip")).toBe(true);
   });
 });
+
+describe("Test component jsx", () => {
+  it("should render 4 divs", () => {
+    const component = mount(<Polaroid />);
+    expect(component.find("div")).toHaveLength(4);
+  });
+});
+
+describe("Test recieving props", () => {
+  it("ComponentWillRecieveProps should return false when disabled is true", () => {
+    const component = mount(<Polaroid disabled={true} />);
+    const instance = component.instance();
+    const result = instance.componentWillReceiveProps({ flip: true });
+    expect(result).toBe(false);
+  });
+  it("ComponentWillRecieveProps should set flip state to true if disabled is true and we're passing true", () => {
+    const component = mount(<Polaroid disabled={false} />);
+    const instance = component.instance();
+    instance.componentWillReceiveProps({ flip: true });
+    expect(instance.state.flip).toBe(true);
+  });
+  it("ComponentWillRecieveProps should set flip state to false if disabled is true and we're passing false", () => {
+    const component = mount(<Polaroid disabled={false} flip={true} />);
+    const instance = component.instance();
+    instance.componentWillReceiveProps({ flip: false });
+    expect(instance.state.flip).toBe(false);
+  });
+});

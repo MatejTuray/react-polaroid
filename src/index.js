@@ -67,7 +67,6 @@ class Polaroid extends Component {
   componentWillReceiveProps(newProps) {
     const state = this.state;
     const props = this.props;
-
     if (!props.disabled) {
       if (
         (newProps.flip === true && state.flip === false) ||
@@ -81,7 +80,6 @@ class Polaroid extends Component {
 
     return false;
   }
-
   render() {
     const {
       frontText,

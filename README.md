@@ -2,12 +2,36 @@
 
 > React polaroid component - card
 
-[![NPM](https://img.shields.io/npm/v/react-polaroid.svg)](https://www.npmjs.com/package/react-polaroid) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-polaroid.svg)](https://www.npmjs.com/package/react-polaroid)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Coverage: lines](./coverage/badge-lines.svg)
+![Coverage: functions](./coverage/badge-functions.svg)
+![Downloads](https://img.shields.io/npm/dt/react-polaroid.svg)
 
 ## Install
 
 ```bash
-npm install --save react-polaroid
+yarn add react-polaroid
+```
+
+## Tests
+
+Testing done by Jest, Sinon, Jasmine, react-test-renderer
+
+```bash
+yarn test
+```
+
+Or
+
+```bash
+yarn test --watch
+```
+
+Generate coverage report
+
+```bash
+yarn test-coverage
 ```
 
 ## Usage
@@ -48,79 +72,30 @@ export default class App extends Component {
 
 # `Polaroid` (component)
 
-React component - Flippable Polaroid photo
+## Test Coverage
+
+You can find detailed report in ./coverage folder
+
+| File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| --------- | ------- | -------- | ------- | ------- | ----------------- |
+| All files | 100     | 94.44    | 100     | 100     |                   |
+| index.js  | 100     | 94.44    | 100     | 100     | 71                |
 
 ## Props
 
-### `backText`
-
-Text on the back of the polaroid picture / card
-
-type: `string`
-defaultValue: `"Polaroid kitty - back"`
-
-### `cardColor`
-
-Optional background color prop
-
-type: `string`
-defaultValue: `"white"`
-
-### `disabled`
-
-Disable flipping
-
-type: `bool`
-defaultValue: `false`
-
-### `flip`
-
-Control flipping between front and back
-
-type: `bool`
-defaultValue: `false`
-
-### `frontText`
-
-Text on the front of the polaroid picture / card
-
-type: `string`
-defaultValue: `"Polaroid kitty - front"`
-
-### `height`
-
-Height
-
-type: `number`
-defaultValue: `400`
-
-### `imgSrc`
-
-Image uri
-
-type: `string`
-defaultValue: `placecat`
-
-### `rotation`
-
-Rotation of the component
-
-type: `number`
-defaultValue: `0`
-
-### `type`
-
-Flip animation type
-
-type: `enum("side"|"default")`
-defaultValue: `"default"`
-
-### `width`
-
-Width
-
-type: `number`
-defaultValue: `220`
+|   Name    |  Type  | Default                |               Description                | Required |
+| :-------: | :----: | :--------------------- | :--------------------------------------: | :------: |
+| frontText | string | Polaroid kitty - front |     Text on the back of the polaroid     |    no    |
+| backText  | string | Polaroid kitty - back  |     Text on the back of the polaroid     |    no    |
+| cardColor | string | white                  |      Optional background color prop      |    no    |
+|   width   | number | 220                    |            Width of component            |    no    |
+|  height   | number | 400                    |           Height of component            |    no    |
+| disabled  |  bool  | false                  |             Disable flipping             |    no    |
+|   flip    |  bool  | false                  | Control flipping between front and back  |    no    |
+|   style   | object | {}                     | Style to customize the component wrapper |    no    |
+|  imgSrc   | string | placecat.jpg           |                Image uri                 |    no    |
+|   type    |  enum  | default                |     Animation type (side or default)     |    no    |
+| rotation  | number | 0                      |        Rotation of the component         |    no    |
 
 ## License
 
