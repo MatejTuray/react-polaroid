@@ -72,6 +72,10 @@ export default class App extends Component {
 
 # `Polaroid` (component)
 
+## Demo
+
+https://matejturay.github.io/react-polaroid/
+
 ## Test Coverage
 
 You can find detailed report in ./coverage folder
