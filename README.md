@@ -76,10 +76,10 @@ export default class App extends Component {
 
 You can find detailed report in ./coverage folder
 
-| File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
-| --------- | ------- | -------- | ------- | ------- | ----------------- |
-| All files | 100     | 94.44    | 100     | 100     |                   |
-| index.js  | 100     | 94.44    | 100     | 100     | 71                |
+| File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Lines |
+| --------- | ------- | -------- | ------- | ------- | --------------- |
+| All files | 100     | 94.44    | 100     | 100     |                 |
+| index.js  | 100     | 94.44    | 100     | 100     | 71              |
 
 ## Props
 
