@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/react-polaroid/static/js/runtime~main.3107b03b.js"
   },
   {
-    "revision": "a5ad61c897ef5ede0f52",
-    "url": "/react-polaroid/static/js/main.bfca3315.chunk.js"
+    "revision": "884705df444088ccb0a2",
+    "url": "/react-polaroid/static/js/main.f7d3a4a7.chunk.js"
   },
   {
     "revision": "28f72ae3d0ee57764e14",
     "url": "/react-polaroid/static/js/2.3203889e.chunk.js"
   },
   {
-    "revision": "a5ad61c897ef5ede0f52",
-    "url": "/react-polaroid/static/css/main.0418341f.chunk.css"
+    "revision": "884705df444088ccb0a2",
+    "url": "/react-polaroid/static/css/main.f8bb2505.chunk.css"
   },
   {
-    "revision": "873e63e290cc89dfd5da4cfa8bb04f74",
+    "revision": "e4d411601f1fbeee1bff4652bb0a873a",
     "url": "/react-polaroid/index.html"
   }
 ];

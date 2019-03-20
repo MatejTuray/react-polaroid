@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-polaroid/precache-manifest.15f06338308fb8640b11d330e8dbbf25.js"
+  "/react-polaroid/precache-manifest.54368939a688ab6dab59dcd039c6ec36.js"
 );
 
 workbox.clientsClaim();
