@@ -16,7 +16,7 @@ yarn add react-polaroid
 
 ## Tests
 
-Testing done by Jest, Sinon, Jasmine, react-test-renderer
+Testing done by Jest, Sinon, Enzyme, react-test-renderer
 
 ```bash
 yarn test
@@ -61,7 +61,7 @@ export default class App extends Component {
         <Polaroid
           frontText="Polaroid kitty - front with default flip"
           rotation={0}
-          flip={this.state.flip1}
+          flip={this.state.flip}
           onClick={() => this.flip()}
         />
       </div>
