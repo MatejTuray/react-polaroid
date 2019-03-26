@@ -7,6 +7,7 @@
 ![Coverage: lines](./coverage/badge-lines.svg)
 ![Coverage: functions](./coverage/badge-functions.svg)
 ![Downloads](https://img.shields.io/npm/dt/react-polaroid.svg)
+![Build](https://travis-ci.org/MatejTuray/react-polaroid.svg?branch=master)
 
 ## Install
 
@@ -15,6 +16,8 @@ yarn add react-polaroid
 ```
 
 ## Tests
+
+CI by Travis-CI
 
 Testing done by Jest, Sinon, Enzyme, react-test-renderer
 
