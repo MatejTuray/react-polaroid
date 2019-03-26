@@ -57,6 +57,8 @@
 .Polaroid_text {
   margin-bottom: 1rem;
   margin-left: 1rem;
+  text-align: center;
+  margin-right: 1rem;
 }
 
 .Polaroid_image {
